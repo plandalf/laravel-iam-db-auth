@@ -21,7 +21,7 @@ class IamDatabaseConnectorProvider extends ServiceProvider
             if (Arr::has($connection, 'use_iam_auth') && Arr::get($connection, 'use_iam_auth')) {
                 switch (Arr::get($connection, 'driver')) {
                     case "mysql":
-                        $this->app->bind('db.connector.mysql', \Pixelvide\DBAuth\Database\MySqlConnector::class);
+                        $this->app->bind('db.connector.mysql', \Plandalf\DBAuth\Database\MySqlConnector::class);
                         break;
                     case "pgsql":
                         $sslMode = Config::get('database.connections.'.$key.'.sslmode', 'verify-full');
@@ -39,7 +39,7 @@ class IamDatabaseConnectorProvider extends ServiceProvider
                         }
                         Config::set('database.connections.'.$key.'.sslrootcert', "'{$certPath}'");
 
-                        $this->app->bind('db.connector.pgsql', \Pixelvide\DBAuth\Database\PostgresConnector::class);
+                        $this->app->bind('db.connector.pgsql', \Plandalf\DBAuth\Database\PostgresConnector::class);
 
                         break;
                 }
