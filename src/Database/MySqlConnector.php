@@ -1,6 +1,6 @@
 <?php
 
-namespace Pixelvide\DBAuth\Database;
+namespace Plandalf\DBAuth\Database;
 
 use Exception;
 use Illuminate\Database\Connectors\MySqlConnector as DefaultMySqlConnector;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
 use PDO;
-use Pixelvide\DBAuth\Auth\RDSTokenProvider;
+use Plandalf\DBAuth\Auth\RDSTokenProvider;
 
 class MySqlConnector extends DefaultMySqlConnector
 {

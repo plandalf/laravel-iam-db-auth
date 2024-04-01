@@ -1,6 +1,6 @@
 <?php
 
-namespace Pixelvide\DBAuth;
+namespace Plandalf\DBAuth;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider;
