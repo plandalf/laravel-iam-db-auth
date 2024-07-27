@@ -43,12 +43,6 @@ class RDSTokenProvider
     public function getToken($refetch = false)
     {
         if ($refetch) {
-            Cache::forget('db_token');
-        }
-        
-        public function getToken($refetch = false)
-    {
-        if ($refetch) {
             Cache::driver('array')->forget('db_token');
         }
 
@@ -59,6 +53,5 @@ class RDSTokenProvider
                 Arr::get($this->config, 'username')
             );
         });
-    }
     }
 }
