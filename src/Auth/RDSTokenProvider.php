@@ -43,10 +43,10 @@ class RDSTokenProvider
     public function getToken($refetch = false)
     {
         if ($refetch) {
-            Cache::driver('array')->forget('db_token');
+            Cache::driver()->forget('db_token');
         }
 
-        return Cache::driver('array')->remember('db_token', 10, function () {
+        return Cache::driver()->remember('db_token', 10, function () {
             return $this->rds_auth_generator->createToken(
                 Arr::get($this->config, 'host').':'.Arr::get($this->config, 'port'),
                 Arr::get($this->config, 'aws_region'),
